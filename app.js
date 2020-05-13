@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 // Import routes
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/posts");
 
 // Setup env variables
 dotenv.config();
@@ -18,5 +19,6 @@ app.use(express.json());
 
 
 app.use("/api/users", authRoute);
+app.use("/api/posts", postRoute);
 
 app.listen(3000, () => console.log("Server is running on 3000"));
